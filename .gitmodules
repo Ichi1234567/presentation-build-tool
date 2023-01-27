@@ -1,0 +1,3 @@
+[submodule "assets/themes/rose-pine-for-marp"]
+	path = assets/themes/rose-pine-for-marp
+	url = git@github.com:rainbowflesh/Rose-Pine-For-Marp.git
