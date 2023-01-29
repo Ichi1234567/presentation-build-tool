@@ -1,12 +1,12 @@
-import { spawn } from 'child_process';
 import prompts from 'prompts';
 
 import config from './config.js';
 import { spawnPromise } from './utils.js';
-import getPresentaions from './get_presentations.js';
+import getPresentations from './get_presentations.js';
+import modifyReadme from './modify_readme.js';
 
 async function main() {
-  const dirs = await getPresentaions(config.sources);
+  const dirs = await getPresentations(config.sources);
   const resp = await prompts([
     {
       type: 'multiselect',
@@ -45,6 +45,9 @@ async function main() {
       console.log('DONE - copy assets');
     });
   })
+
+  // modify readme
+  modifyReadme(dirs);
 }
 
 main();
