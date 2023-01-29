@@ -32,6 +32,7 @@ function readmeTemplate(fromGroups) {
 
   return [
     '# Presentations',
+    'The contents are built by [presentation-build-tool](https://github.com/Ichi1234567/presentation-build-tool).',
     ...groupContents,
   ].join('\n');
 }
@@ -43,5 +44,7 @@ export default function modifyReadme(dirs) {
   // console.log('groups', groups);
   // console.log('content', content);
 
-  return writeFile(config.targetReadme, content);
+  return writeFile(config.targetReadme, content).then(() => {
+    console.log('DONE - modified readme');
+  });
 }
